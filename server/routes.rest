@@ -1,0 +1,30 @@
+GET http://localhost:3000/staff
+
+###
+
+GET http://localhost:3000/staff/61a29a63fcf06d73a68752ca
+
+### 
+
+DELETE  http://localhost:3000/staff/61a29fc33271177b82ee7a9b
+
+### 
+
+PATCH http://localhost:3000/staff/61a29a63fcf06d73a68752ca
+Content-Type: application/json
+
+{
+    "firstName": "Joseph"
+}
+
+### 
+
+POST http://localhost:3000/staff
+Content-Type: application/json
+
+{
+    "firstName": "Joe",
+    "lastName": "OReilly",
+    "age": 29,
+    "salary": 25000
+}
