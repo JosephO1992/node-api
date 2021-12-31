@@ -17,27 +17,6 @@ app.use(jsonParser)
 const staffRouter = require('./routes/staff');
 app.use('/staff', staffRouter)
 
-// const staff = [
-//     {
-//         firstName: 'Joe',
-//         lastName: 'O\'Reilly',
-//         age: 29
-//     },
-//     {
-//         firstName: 'Chloe',
-//         lastName: 'Stanley',
-//         age: 23
-//     },
-//     {
-//         firstName: 'James',
-//         lastName: 'Hutchinson',
-//         age: 35
-//     },
-// ]
-
-
-
-
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}.`);
   });
