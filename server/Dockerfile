@@ -2,10 +2,12 @@ FROM node:16-alpine
 
 RUN npm install -g nodemon
 
-WORKDIR /home/node/code
+WORKDIR /usr/src/app
 
-COPY --chown=node:node . .
+COPY package*.json /usr/src/app/
 
-RUN npm ci
+RUN npm install && mv /usr/src/app/node_modules /node_modules
 
-CMD ["nodemon", "/home/node/code/app.js"]
+COPY . /usr/src/app
+
+CMD [ "nodemon" ]

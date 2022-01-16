@@ -1,0 +1,31 @@
+version: "3"
+services:
+  api:
+    build: ./server
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/home/node/code
+      - /home/node/code/node_modules
+    networks:
+      - expressStaffCRM
+    links:
+      - db
+    depends_on:
+      - db
+  db:
+    image: mongo:3
+    restart: unless-stopped
+    environment:
+      MONGODB_ROOT_USERNAME: root
+      MONGODB_DATABASE: staff
+      MONGODB_ROOT_PASSWORD: example 
+    ports:
+      - "27017:27017"
+    networks:
+      - expressStaffCRM
+volumes:
+  my-datavolume:
+networks:
+  expressStaffCRM:
+    driver: bridge
