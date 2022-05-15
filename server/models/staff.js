@@ -16,7 +16,7 @@ const staffSchema = new mongoose.Schema({
     salary: {
         type: Number,
         required: true
-    }
+    },
 
 })
 
