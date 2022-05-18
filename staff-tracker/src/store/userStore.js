@@ -10,7 +10,7 @@ export const useUserStore = defineStore('userStore', {
       async getUsers () {
           const users = await fetch("http://localhost:8000/staff");
           const res = await users.json();
-          console.log(res)
+          this.users = res
       }
   }
 })
