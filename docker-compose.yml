@@ -9,6 +9,8 @@ services:
       - /home/node/code/node_modules
     networks:
       - expressStaffCRM
+    environment:
+      - DATABASE_URL=mongodb://db/staff
     links:
       - db
     depends_on:
