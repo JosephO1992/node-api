@@ -1,12 +1,22 @@
 <script setup>
-import StaffItem from "@components/staff/StaffItem.vue"
+import { onMounted } from 'vue';
+import { useRoute } from 'vue-router';
+
+import { useUserStore } from '@store/userStore';
+
+const main = useUserStore();
+
+const route = useRoute()
+
+onMounted(() => {
+    const id = route.params.id
+    main.getUser(id);
+})
 
 
 
 </script>
 <template>
-    <div>
-        this is the staff page
-    </div>
-    <staff-item></staff-item>
+this is the staff page
+
 </template>

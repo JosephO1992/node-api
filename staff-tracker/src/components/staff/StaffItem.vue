@@ -1,22 +1,24 @@
-<script setup>
-import { onMounted } from 'vue';
-import { useRoute } from 'vue-router';
+<script>
 
-import { useUserStore } from '@store/userStore';
-
-const main = useUserStore();
-
-const route = useRoute()
-
-onMounted(() => {
-    const id = route.params.id
-    main.getUser(id);
-})
-
-
+export default {
+    props: {
+        staff: {
+            type: Object,
+            default: {}
+        }
+    }
+}
 
 </script>
 <template>
-{{main.user}}
+
+    <router-link :to="`/staff/${staff._id}`" class="w-56 h-32 bg-blue-200 rounded-sm">
+
+                {{ staff.firstName }}
+                {{ staff.lastName }}
+                {{ staff.age }}
+                {{ staff.salary }}
+        </router-link>
+
 
 </template>
